@@ -10,16 +10,21 @@
 </head>
 
 <body>
+
+
     <nav class="navbar">
         <h1 class="heading">Login to get started</h1>
         <img src="logo.png" alt="logo" class="top-logo">
         <form action="" class="inputUser">
-            <input type="text" name="" id="" class="user-login">
-            <input type="number" name="" id="" class="user-login">
+            <input type="text" name="" id="" class="user-login" placeholder="UserName">
+            <input type="number" name="" id="" class="user-login" placeholder="Pin" maxlength="4">
             <button class="login-btn">&rarr;</button>
         </form>
     </nav>
-    <div class="app">
+
+
+    <!--this is  all data after navbar except bottom in and out money details -->
+    <div class="app hide">
         <div class="status">
             <h2 class="balance-heading">your current balance</h2>
             <p class="total-balance">Rs100000000</p>
@@ -29,55 +34,66 @@
             <div class="user">
                 <p class="user-action">1</p>
                 <p class="user-deposite">deposite</p>
-                
             </div>
             <p class="deposite-date">27/01/2002</p>
-            <div  class="deposite-money">
+            <div class="deposite-money">
                 <p>Rs 20000</p>
             </div>
         </div>
 
-
+        <!-- bank money transaction summary -->
         <div class="summary">
             <p>in</p>
-            <p>Rs 26738</p>
+            <p style="padding-right: 52px;">Rs 26738</p>
             <p>out</p>
-            <p>765</p>
+            <p style="padding-right: 52px;">765</p>
             <p>interest</p>
             <p>Rs 400</p>
 
         </div>
-
+        <!-- Money transfering system -->
         <div class="transfer-money">
             <h2>Transfer money</h2>
             <form action="">
-                <input type="text" name="" id="" class="user-login">
-                <input type="number" name="" id="" class="user-login">
-                <button class="login-btn">&rarr;</button>
-            </form>
-        </div>
-        <div class="loan">
-            <h2>Reequest Loan</h2>
-            <form action="" >
-                <input type="number" name="" id="" class="user-login">
+
+                <input type="text" name="text" id="text" class="user-login" placeholder="Transfer to">
+                <input type="number" name="" id="" class="user-login" placeholder="amount">
                 <button class="login-btn">&rarr;</button>
             </form>
         </div>
 
-        <div class="close-account">
-            <h2>close Account</h2>
-            <form action="" >
-                <input type="text" name="" id="" class="user-login">
-                <input type="text" name="" id="" class="user-login">
+
+        <!-- taking loan through bank -->
+        <div class="loan">
+            <h2>Request Loan</h2>
+            <form action="">
+                <input type="number" name="" id="" class="user-login" placeholder="amount">
                 <button class="login-btn">&rarr;</button>
             </form>
         </div>
-            <p class="loggedout-timer">
-                "you will loggedout in: "
-                <span>time</span>
-            </p>
-        
-        </main>
+
+
+        <!-- closing account permanentaly -->
+        <div class="close-account">
+            <h2>close Account</h2>
+            <form action="">
+                <input type="text" name="" id="" class="user-login" placeholder="confirm use">
+                <input type="text" name="" id="" class="user-login" placeholder="confirm pin">
+                <button class="login-btn">&rarr;</button>
+            </form>
+        </div>
+
+
+        <p class="loggedout-timer">
+            you will loggedout in :
+            <span>time</span>
+        </p>
+
+    </div>
+
+
+        <script src="script.js"></script>
+
 </body>
 
 </html>
