@@ -16,8 +16,8 @@
         <h1 class="heading">Login to get started</h1>
         <img src="logo.png" alt="logo" class="top-logo">
         <form action="" class="inputUser">
-            <input type="text" name="" id="" class="user-login" placeholder="UserName">
-            <input type="number" name="" id="" class="user-login" placeholder="Pin" maxlength="4">
+            <input type="text" name="" id="" class="user-login username" placeholder="UserName">
+            <input type="number" name="" id="" class="user-login user-pass" placeholder="Pin" maxlength="4">
             <button class="login-btn">&rarr;</button>
         </form>
     </nav>
@@ -25,30 +25,37 @@
 
     <!--this is  all data after navbar except bottom in and out money details -->
     <div class="app hide">
+       
         <div class="status">
             <h2 class="balance-heading">your current balance</h2>
             <p class="total-balance">Rs100000000</p>
         </div>
 
         <div class="user-details">
-            <div class="user">
-                <p class="user-action">1</p>
-                <p class="user-deposite">deposite</p>
+            <div class="user-data">
+                <p class="user-type user-deposits">112deposite</p>
+                <p class="deposite-date">27/01/2002</p>
+                <p class="user-deposite-money">Rs 20000</p>
             </div>
-            <p class="deposite-date">27/01/2002</p>
-            <div class="deposite-money">
-                <p>Rs 20000</p>
+
+            <div class="user-data">
+                <p class="user-type user-withdraws">1  withdraw</p>
+                <p class="deposite-date">27/01/2002</p>
+                <p class="user-deposite-money">Rs 20000</p>
             </div>
+       
         </div>
+        
+      
 
         <!-- bank money transaction summary -->
         <div class="summary">
-            <p>in</p>
-            <p style="padding-right: 52px;">Rs 26738</p>
-            <p>out</p>
-            <p style="padding-right: 52px;">765</p>
-            <p>interest</p>
-            <p>Rs 400</p>
+            <p class="in">in</p>
+            <p style="padding-right: 52px;" class="total-in">Rs 26738</p>
+            <p class="out">out</p>
+            <p style="padding-right: 52px;" class="tota-out">765</p>
+            <p class="interest">interest</p>
+            <p class="interest-money">Rs 400</p>
 
         </div>
         <!-- Money transfering system -->
@@ -56,9 +63,9 @@
             <h2>Transfer money</h2>
             <form action="">
 
-                <input type="text" name="text" id="text" class="user-login" placeholder="Transfer to">
-                <input type="number" name="" id="" class="user-login" placeholder="amount">
-                <button class="login-btn">&rarr;</button>
+                <input type="text" name="text" id="text" class="user-login transfer-money-userName" placeholder="Transfer to">
+                <input type="number" name="" id="" class="user-login transfer-money-pass" placeholder="amount">
+                <button class="login-btn transfer-btn">&rarr;</button>
             </form>
         </div>
 
@@ -67,8 +74,8 @@
         <div class="loan">
             <h2>Request Loan</h2>
             <form action="">
-                <input type="number" name="" id="" class="user-login" placeholder="amount">
-                <button class="login-btn">&rarr;</button>
+                <input type="number" name="" id="" class="user-login loan-userName" placeholder="amount">
+                <button class="login-btn loan-btn">&rarr;</button>
             </form>
         </div>
 
@@ -77,9 +84,9 @@
         <div class="close-account">
             <h2>close Account</h2>
             <form action="">
-                <input type="text" name="" id="" class="user-login" placeholder="confirm use">
-                <input type="text" name="" id="" class="user-login" placeholder="confirm pin">
-                <button class="login-btn">&rarr;</button>
+                <input type="text" name="" id="" class="user-login close-account-userName" placeholder="confirm use">
+                <input type="text" name="" id="" class="user-login close-account-pass" placeholder="confirm pin">
+                <button class="login-btn close-account-btn">&rarr;</button>
             </form>
         </div>
 
