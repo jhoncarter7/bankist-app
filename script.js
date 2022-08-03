@@ -92,6 +92,10 @@ const displayBlance = function (acc) {
 
     totalBalance.innerHTML = `Rs: ${acc.balance}`;
 
+    const userName = currentAccount.owner;
+
+    heading.innerHTML = `Welcome back, ${userName}`
+
 }
 
 
@@ -116,24 +120,9 @@ const dipoWithdrawIntr = function (acc) {
         .map(mov => (mov * interestValue)/100)
         .filter(mov => mov > 0)
         .reduce((curr, mov) => curr + mov)
-console.log(interest)
+
     interestMoney.innerHTML = `Rs: ${(interest)}`
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,8 +148,6 @@ const updateUI = function (currentAccount) {
 }
 
 
-
-
 let currentAccount;
 
 // login btn of nav
@@ -181,8 +168,6 @@ loginbtn.addEventListener('click', function (e) {
 })
 
 
-
-
 loanBtn.addEventListener('click', function (e) {
     e.preventDefault()
 
@@ -201,13 +186,6 @@ loanBtn.addEventListener('click', function (e) {
 )
 
 
-
-
-
-
-
-
-
 // Transfer Money
 transferBtn.addEventListener('click', function (e) {
     e.preventDefault()
@@ -215,8 +193,6 @@ transferBtn.addEventListener('click', function (e) {
 
     const money = Number(transferMoneyAmount.value);
     transfermoneyuserName.value = transferMoneyAmount.value = '';
-
-
 
     if (money > 0 &&
         reciverAccount?.userName !== currentAccount.userName &&
@@ -232,20 +208,9 @@ transferBtn.addEventListener('click', function (e) {
 
 
 
-
-
-
-
-
-
-
-
-
 // close account 
 closeAccountBtn.addEventListener('click', function (e) {
     e.preventDefault();
-
-
 
     if (currentAccount.userName === closeAccountUserName.value &&
         currentAccount.pin === Number(closeAccountPass.value)) {
