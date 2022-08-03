@@ -67,7 +67,7 @@
    
 }
 .hide{
-    /* opacity: 0; */
+    opacity: 0;
     transition: all 3.4s;
 }
 
@@ -80,8 +80,8 @@
 }
 
 .balance-heading {
-    font-size: 2rem;
-    /* margin-left: 12%; */
+    font-size: 1.4rem;
+     
 }
 
 .total-balance {
@@ -122,12 +122,11 @@
     
 }
 .user-deposits{
-    background-color: green;
-    
+    background-color: green;background-image: linear-gradient(to top left, #39b385, #9be15d);   
 }
 
 .user-withdraws{
-    background-color: red;
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f)
 }
 .deposite-date {
    padding-left: 1rem;
@@ -148,7 +147,7 @@
 .summary {
     grid-column: 1 /3;
     grid-row: 5 /6;
-    border: 2px solid rgb(236, 229, 231);
+    /* border: 1px solid rgb(229, 236, 236); */
     display: flex;
     gap: 15px;
     font-size: 1.4rem;
@@ -156,7 +155,24 @@
     border-radius: 22px;
    
 }
+.total-in{   
+    padding-right: 52px;
+    color: green;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+.total-out{    
+    padding-right: 52px;
+    font-weight: bolder;
+    color: red;
+    font-size: 1.6rem;
+}
 
+.interest-money{
+    font-weight: bolder;
+    font-size: 1.6rem;
+    color: green;
+}
 
 .transfer-money {
     grid-column: 3 / 4;
