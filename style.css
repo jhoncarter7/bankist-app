@@ -140,13 +140,13 @@
    
 }
 .total-in{   
-    padding-right: 52px;
+    padding-right: 26px;
     color: green;
     font-weight: bolder;
     font-size: 1.6rem;
 }
 .total-out{    
-    padding-right: 52px;
+    padding-right: 26px;
     font-weight: bolder;
     color: red;
     font-size: 1.6rem;
