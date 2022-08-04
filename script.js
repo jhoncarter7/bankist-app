@@ -113,9 +113,9 @@ const dipoWithdrawIntr = function (acc) {
 
     const withdraw = acc.movements.filter(mov => mov < 0)
         .reduce((curr, mov) => curr + mov, 0)
-    totalOut.innerHTML = `${withdraw} `
+    totalOut.innerHTML = `${withdraw.toFixed(2)} `
 
-    totalOut.innerHTML = `${withdraw}`
+
     const interestValue = acc.interest;
     const interest = acc.movements
         .map(mov => (mov * interestValue)/100)
