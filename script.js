@@ -2,21 +2,21 @@
 
 const account1 = {
     owner: 'Nikhil rai',
-    movements: [200, 600, -300, 1000, -500, 100, 200, 600, -300, 1000, 100, 200, 600, -300, 1000, -500, 100],
+    movements: [200, 600, -300.78, 1000, -500, 100, 200.64, 600, -300, 1000, 100.5, 200, 600, -300, 1000, -500, 100],
     pin: 1111,
     interest: 2  /* % */
 
 }
 const account2 = {
     owner: 'Aditya singh',
-    movements: [3000, 6000, -1500, 10000, -5000, 150],
+    movements: [3000.3, 6000.9, -1500, 10000, -5000, 150],
     pin: 2222,
     interest: 2.5  /* % */
 
 }
 const account3 = {
     owner: 'modi ji',
-    movements: [400, 7000, -2000, 300, -500, 900],
+    movements: [400, 7000, -2000.1, 300, -500, 900],
     pin: 3333,
     interest: 1.2  /* % */
 
@@ -57,6 +57,7 @@ const closeAccountUserName = document.querySelector('.close-account-userName');
 const closeAccountPass = document.querySelector('.close-account-pass');
 const closeAccountBtn = document.querySelector('.close-account-btn');
 const loggedoutTimer = document.querySelector('.loggedout-timer');
+const sortBtn = document.querySelector('.sort-btn');
 // const userPass = document.querySelector('.user');
 
 
@@ -71,7 +72,7 @@ const displaySummary = function (currentAccount) {
             ` <div class="user-data">
            <p class="user-type user-${options}">${i + 1} ${options} </p>
            <p class="deposite-date">27/07/20022</p>
-           <p class="user-deposite-money">Rs ${mov}</p>
+           <p class="user-deposite-money">Rs ${mov.toFixed(2)}</p>
            </div>
         `;
         containerUserDetails.insertAdjacentHTML('afterbegin', html)
@@ -90,7 +91,7 @@ const displayBlance = function (acc) {
     acc.balance = currentAccount.movements
         .reduce((curr, mov) => curr + mov)
 
-    totalBalance.innerHTML = `Rs: ${acc.balance}`;
+    totalBalance.innerHTML = `Rs: ${acc.balance.toFixed(2)}`;
 
     const userName = currentAccount.owner;
 
@@ -106,7 +107,7 @@ const dipoWithdrawIntr = function (acc) {
         .filter(mov => mov > 0)
         .reduce((curr, mov) => curr + mov, 0);
 
-    totalIn.innerHTML = `${deposit} `
+    totalIn.innerHTML = `${deposit.toFixed(2)} `
 
 
 
@@ -121,7 +122,7 @@ const dipoWithdrawIntr = function (acc) {
         .filter(mov => mov > 0)
         .reduce((curr, mov) => curr + mov)
 
-    interestMoney.innerHTML = `Rs: ${(interest)}`
+    interestMoney.innerHTML = `Rs: ${(interest.toFixed(2))}`
 }
 
 
@@ -157,7 +158,6 @@ loginbtn.addEventListener('click', function (e) {
     currentAccount = accounts.find(acc =>
         acc.userName === userNames.value
     );
-    console.log(currentAccount);
     if (currentAccount.pin == userPass.value) {
         hide.style.opacity = 100;
         balanceHeading.innerHTML = currentAccount.owner + ",  your current balance =>"
@@ -171,13 +171,12 @@ loginbtn.addEventListener('click', function (e) {
 loanBtn.addEventListener('click', function (e) {
     e.preventDefault()
 
-    const loanMoney = Number(loanAmount.value);
+    const loanMoney = +(loanAmount.value);
 
     loanAmount.value = '';
 
-    If(loanMoney > 0)
+    if (loanMoney > 0)
     {
-
         currentAccount.movements.push(loanMoney);
     }
     updateUI(currentAccount)
@@ -213,7 +212,7 @@ closeAccountBtn.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (currentAccount.userName === closeAccountUserName.value &&
-        currentAccount.pin === Number(closeAccountPass.value)) {
+        currentAccount.pin === +closeAccountPass.value) {
         // console.log("ok")
 
         const index = accounts.findIndex(acc => acc.userName === currentAccount.userName)
@@ -223,3 +222,11 @@ closeAccountBtn.addEventListener('click', function (e) {
     closeAccountUserName.value = closeAccountPass.value = '';
 
 })
+
+// sorting the balance summery
+
+// sortBtn.addEventListener('click', function(e){
+//   e.preventDefault();
+
+  
+// })
