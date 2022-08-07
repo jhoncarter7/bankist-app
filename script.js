@@ -233,6 +233,10 @@ const updateUI = function (currentAccount) {
     dipoWithdrawIntr(currentAccount)
 
 }
+
+
+
+// timeOUt system
 const startlogedoutTimer = function(){
 
     let timer = 8 * 60;
@@ -254,13 +258,13 @@ const startlogedoutTimer = function(){
            
       tick()      
    const timeInterval = setInterval(tick ,1000);
-   return timer;
+   return timeInterval;
 }
 
 
 
-let currentAccount;
-let timer
+let currentAccount, timeInterval;
+
 // login btn of nav
 loginbtn.addEventListener('click', function (e) {
     e.preventDefault();
@@ -274,8 +278,8 @@ loginbtn.addEventListener('click', function (e) {
         userPass.value = userNames.value = '';
 
    
-         if(timer) clearInterval(timer);
-        timer = startlogedoutTimer()
+         if(timeInterval) clearInterval(timeInterval);
+         timeInterval = startlogedoutTimer()
     
 
 
@@ -298,8 +302,8 @@ loanBtn.addEventListener('click', function (e) {
         currentAccount.movements.push(loanMoney);
         currentAccount.movementsDates.push(new Date())
     }
-    clearInterval(timer)
-        timer = startlogedoutTimer()
+    clearInterval(timeInterval)
+    timeInterval = startlogedoutTimer()
     updateUI(currentAccount)
 
 
@@ -324,8 +328,8 @@ transferBtn.addEventListener('click', function (e) {
         reciverAccount.movements.push(money)
         currentAccount.movements.push(-money)
 
-        clearInterval(timer)
-        timer = startlogedoutTimer()
+        clearInterval(timeInterval)
+        timeInterval = startlogedoutTimer()
         updateUI(currentAccount)
 
     }
@@ -358,24 +362,6 @@ sortBtn.addEventListener('click', function (e) {
     sorted = !sorted;
 
 
-    clearInterval(timer)
-        timer = startlogedoutTimer()
+    clearInterval(timeInterval)
+    timeInterval = startlogedoutTimer()
 })
-
-
-
-
-// setInterval(()=> {
-//     const now = new Date();
-//     // const hour = now.gethour
-//     // const min = now.getminute
-//     // const sec = now.getsecond
-//     // const times = `${hour}:${min}:${sec}`
-
-//    const options = {
-//     hour: 'numeric',
-//     minute: 'numeric',
-//         second: 'numeric'
-//     }
-//     console.log(new Intl.DateTimeFormat('en-IN', options).format(now))
-// }, 1000)
