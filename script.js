@@ -274,7 +274,7 @@ loginbtn.addEventListener('click', function (e) {
     );
     if (currentAccount.pin == userPass.value) {
         hide.style.opacity = 100;
-        balanceHeading.innerHTML = currentAccount.owner + ",  your current balance =>"
+        balanceHeading.innerHTML = currentAccount.owner + ",  your current balance "
         userPass.value = userNames.value = '';
 
    
