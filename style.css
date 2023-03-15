@@ -47,7 +47,7 @@
 .app {
     display: grid;
     gap: 1rem;
-    max-width: 67rem;
+   padding: 0 2rem 0 2rem;
     margin: 4rem auto;
     grid-template-columns: 4fr 3fr;
     grid-template-rows: auto repeat(4, 9rem);
